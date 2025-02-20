@@ -1,0 +1,196 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% block title %}{% endblock %}
+{% block css %}
+{% endblock %}
+
+<div class="container">
+    <h5 class="mb-4">Discover Assignments and Quizzes</h5>
+    <hr>
+    <div class="row">
+        <div class="col-md-4">
+            <form method="get">
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="academic_year">Academic Year:</label>
+                        <select class="form-control select2" name="academic_year" id="academic_year">
+                            <option value="">All</option>
+                            {% for year in academic_years %}
+                            <option value="{{ year.id }}" {% if request.GET.academic_year == year.id|stringformat:"i" %}selected{% endif %}>{{ year }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="year_of_study">Year of Study:</label>
+                        <select class="form-control select2" name="year_of_study" id="year_of_study">
+                            <option value="">All</option>
+                            {% for year in years_of_study %}
+                            <option value="{{ year.id }}" {% if request.GET.year_of_study == year.id|stringformat:"i" %}selected{% endif %}>Year {{ year }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="stream">Stream:</label>
+                        <select class="form-control select2" name="stream" id="stream">
+                            <option value="">All</option>
+                            {% for stream in streams %}
+                            <option value="{{ stream.id }}" {% if request.GET.stream == stream.id|stringformat:"i" %}selected{% endif %}>{{ stream }} Classes</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="level">Level:</label>
+                        <select class="form-control select2" name="level" id="level">
+                            <option value="">All</option>
+                            {% for level in levels %}
+                            <option value="{{ level.id }}" {% if request.GET.level == level.id|stringformat:"i" %}selected{% endif %}>{{ level }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="programme">Programme:</label>
+                        <select class="form-control select2" name="programme" id="programme">
+                            <option value="">All</option>
+                            {% for programme in programmes %}
+                            <option value="{{ programme.id }}" {% if request.GET.programme == programme.id|stringformat:"i" %}selected{% endif %}>{{ programme }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-sm w-100 mt-3">Filter</button>
+            </form>
+        </div>
+
+        <div class="col-md-8">
+            <h2>Assignments</h2>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered group-table" id="table1">
+                    <thead>
+                        <tr>
+                            <th>Programme</th>
+                            <th>Course</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Question</th>
+                            <th>File</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for assignment in assignments %}
+                        {% if assignment.end_date <= today %}
+                        <tr class="table-warning">
+                            {% else %}
+                        <tr>
+                            {% endif %}
+                            <td>{{ assignment.programme }}</td>
+                            <td>{{ assignment.course }}</td>
+                            <td>{{ assignment.start_date }}</td>
+                            <td>{{ assignment.end_date }}</td>
+                            <td>
+                                <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#questionModal{{ assignment.id }}">
+                                    <i class="fas fa-question-circle"></i>
+                                </button>
+                            </td>
+                            <td>
+                                {% if assignment.file %}
+                                <a href="{{ assignment.file.url }}"><i class="fas fa-download text-info"></i></a>
+                                {% endif %}
+                            </td>
+                        </tr>
+
+                        <div class="modal fade" id="questionModal{{ assignment.id }}" tabindex="-1" role="dialog" aria-labelledby="questionModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="questionModalLabel">Assignment Question</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        {{ assignment.question|safe }}
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% empty %}
+                        <tr>
+                            <td colspan="6">No assignments found.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Quizzes</h2>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered group-table" style="width:100%" id="table2">
+                    <thead>
+                        <tr>
+                            <th>Programme</th>
+                            <th>Course</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Question</th>
+                            <th>File</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for quiz in quizzes %}
+                        {% if quiz.end_date <= today %}
+                        <tr class="table-warning">
+                            {% else %}
+                        <tr>
+                            {% endif %}
+                            <td>{{ quiz.programme }}</td>
+                            <td>{{ quiz.course }}</td>
+                            <td>{{ quiz.start_date }}</td>
+                            <td>{{ quiz.end_date }}</td>
+                            <td>
+                                <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#quizModal{{ quiz.id }}">
+                                    <i class="fas fa-question-circle"></i>
+                                </button>
+                            </td>
+                            <td>
+                                {% if quiz.file %}
+                                <a href="{{ quiz.file.url }}"> <i class="fas fa-download text-info"></i></a>
+                                {% endif %}
+                            </td>
+                        </tr>
+
+                        <div class="modal fade" id="quizModal{{ quiz.id }}" tabindex="-1" role="dialog" aria-labelledby="quizModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="quizModalLabel">Quiz Question</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>{{ quiz.question|safe }}</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% empty %}
+                        <tr>
+                            <td colspan="6">No quizzes found.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block js %}
+<script>
+    $(document).ready(function() {
+        $('.select2').select2();
+    });
+</script>
+{% endblock %}
+{% endblock %}

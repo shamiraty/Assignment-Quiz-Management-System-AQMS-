@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% block title %}{% endblock %}
+{% block css %} 
+{% endblock %}
+<div class="container">
+    <style>
+        /* Custom styles */
+        .card-header {
+            background-color: #007bff;
+            color: white;
+        }
+        .card-body {
+            background-color: #f8f9fa;
+        }
+        .dropdown-menu {
+            background-color: #e9ecef;
+        }
+       
+        .dropdown-item {
+            cursor: pointer;
+        }
+        .dropdown-item:hover {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-2">
+   
+
+  
+<!---
+        <div class="card shadow-sm">
+            <div class="card-body">-->
+            <hr>
+        <div class="row">
+            <!-- Discover Assignments & Quizzes Card -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card shadow-lg">
+                    <div class="card-header bg-info">
+                        <h5 class="card-title"><i class="fas fa-book"></i> Discover Assignments & Quizzes</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>College Assignments: {{ assignment_count }}</p>
+                        <p>College Quizzes: {{ quiz_count }}</p>
+
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="assignmentProgramDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-arrow-down"></i> Assignments by Programme
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="assignmentProgramDropdown">
+                                {% for programme, count in assignment_per_programme.items %}
+                                    <a class="dropdown-item">{{ programme }}: {{ count }}</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        
+                        <div class="dropdown mt-3">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="quizProgramDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-arrow-down"></i> Quizzes by Programme
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="quizProgramDropdown">
+                                {% for programme, count in quiz_per_programme.items %}
+                                    <a class="dropdown-item">{{ programme }}: {{ count }}</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <div class="dropdown mt-3">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="assignmentCourseDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-arrow-down"></i> Assignments by Course
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="assignmentCourseDropdown">
+                                {% for course, count in assignment_per_course.items %}
+                                    <a class="dropdown-item">{{ course }}: {{ count }}</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <div class="dropdown mt-3">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="quizCourseDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-arrow-down"></i> Quizzes by Course
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="quizCourseDropdown">
+                                {% for course, count in quiz_per_course.items %}
+                                    <a class="dropdown-item">{{ course }}: {{ count }}</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <a href="{% url 'find_assignment' %}" class="btn btn-outline-primary mt-3">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Group Students Card -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card shadow-lg">
+                    <div class="card-header bg-info">
+                        <h5 class="card-title"><i class="fas fa-users"></i> Group Students</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Group and view student details.</p>
+                        <a href="{% url 'group_students' %}" class="btn btn-outline-success">View Groups</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Download Card -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card shadow-lg">
+                    <div class="card-header bg-info">
+                        <h5 class="card-title"><i class="fas fa-download"></i> Download Files</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Download assignment or quiz files.</p>
+                        <a href="{% url 'download_file' 'sample_file_path' %}" class="btn btn-outline-warning">Download</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {% block js %}
+    {% endblock %}
+</body>
+</html>
+{% endblock %}
