@@ -10,8 +10,6 @@
 - **Youtube**: [Videos](https://www.youtube.com/channel/UCjepDdFYKzVHFiOhsiVVffQ)
 - **Live Demo**: [Demo](https://collegeforce.pythonanywhere.com/)
 
-> You can also view a live demo of the system by visiting: [Live Demo](https://collegeforce.pythonanywhere.com/)
-
 ## Admin Login Credentials
 
 To access the admin panel, use the following login credentials:
