@@ -2,9 +2,7 @@
 ## **INFORMATION SYSTEMS DEVELOPMENT & MANAGEMENT**
 ![1](https://github.com/user-attachments/assets/ff3f6bb8-257e-43cf-a127-08663ff4cb5b)
 
-## Pricing and Contact Information
-
-This system is available for **35 USD**, which can be paid privately or through online payment methods. For access to the source code and to implement the system in your institution, please contact us through the following channels:
+## Contact Information
 
 - **Location**: Dodoma, Tanzania
 - **Email**: [sashashamsia@gmail.com](mailto:sashashamsia@gmail.com)
