@@ -19,6 +19,14 @@ To access the admin panel, use the following login credentials:
 - **Username**: `admin@college300.co.tz`
 - **Password**: `demo1234`
 
+| **Testing Data for Modules** | **Value** |
+|------------------------------|-----------|
+| **Modules** | Discover Assignments and Quizzes HTML page, Create Group Members HTML page |
+| **Academic Year** | 2025-2026 |
+| **Year of Study** | Year 1 |
+| **Stream** | Evening Classes |
+| **Level** | Bachelor Degree |
+| **Programme** | Management Practice [2025-2026 Evening] |
 
 ## 1. Introduction
 
