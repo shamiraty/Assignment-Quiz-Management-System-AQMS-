@@ -1,6 +1,7 @@
 # ASSIGNMENT & QUIZ MANAGEMENT SYSTEM (AQMS) DOCUMENTATION
 # INFORMATION SYSTEMS DEVELOPMENT & MANAGEMENT
-
+![1](https://github.com/user-attachments/assets/ff3f6bb8-257e-43cf-a127-08663ff4cb5b)
+![2](https://github.com/user-attachments/assets/e027788f-9b1a-4092-b0ae-4492f3b7fe11)
 
 ## Pricing and Contact Information
 
@@ -129,24 +130,24 @@ random.shuffle(students)
 groups = [[] for _ in range(group_count)]
 for index, student in enumerate(students):
     groups[index % group_count].append(student)
-
+```
 ## 8. Methodology
 
 ### Functionality References
 
-1. **Assignment & Quiz Upload and Management**:
+8.1. **Assignment & Quiz Upload and Management**:
    - **Instructors** are able to upload, update, or delete assignments and quizzes associated with specific programs, academic years, and courses. This functionality ensures that the latest academic materials are always available for students, and instructors can modify content as required.
 
-2. **Random Group Formation**:
+8.2. **Random Group Formation**:
    - The **system** automatically generates student groups for assignments or quizzes to ensure that groups are balanced and free of biases. This ensures that no group is unfairly composed of stronger or weaker students based on subjective decisions.
 
-3. **Analytics and Tracking**:
+8.3. **Analytics and Tracking**:
    - The system provides detailed analytics for **instructors** on the total number of assignments and quizzes assigned to students, allowing instructors to monitor the workload distribution across various programs and courses.
 
-4. **Deadline Management and Alerts**:
+8.4. **Deadline Management and Alerts**:
    - The platform automatically alerts **students** and **instructors** of upcoming deadlines. This functionality ensures that assignments and quizzes are submitted on time, and no student misses any due dates.
 
-5. **Search and Filter for Assignments**:
+8.5. **Search and Filter for Assignments**:
    - **Students** can filter assignments and quizzes by their program, academic year, and course, ensuring that they can easily find the materials relevant to their current study.
 
 ---
