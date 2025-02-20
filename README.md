@@ -9,8 +9,10 @@ This system is available for **35 USD**, which can be paid privately or through 
 - **Location**: Dodoma, Tanzania
 - **Email**: [sashashamsia@gmail.com](mailto:sashashamsia@gmail.com)
 - **WhatsApp**: [+255675839840](https://wa.me/255675839840)
+- **Youtube**: [Videos](https://www.youtube.com/channel/UCjepDdFYKzVHFiOhsiVVffQ)
+- **Live Demo**: [Demo](https://collegeforce.pythonanywhere.com/)
 
-You can also view a live demo of the system by visiting: [Live Demo](https://collegeforce.pythonanywhere.com/)
+> You can also view a live demo of the system by visiting: [Live Demo](https://collegeforce.pythonanywhere.com/)
 
 ## Admin Login Credentials
 
