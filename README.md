@@ -1,5 +1,5 @@
-# ASSIGNMENT & QUIZ MANAGEMENT SYSTEM (AQMS) DOCUMENTATION
-# INFORMATION SYSTEMS DEVELOPMENT & MANAGEMENT
+## **ASSIGNMENT & QUIZ MANAGEMENT SYSTEM (AQMS) DOCUMENTATION**
+## **INFORMATION SYSTEMS DEVELOPMENT & MANAGEMENT**
 ![1](https://github.com/user-attachments/assets/ff3f6bb8-257e-43cf-a127-08663ff4cb5b)
 
 ## Pricing and Contact Information
@@ -10,24 +10,17 @@ This system is available for **35 USD**, which can be paid privately or through 
 - **Email**: [sashashamsia@gmail.com](mailto:sashashamsia@gmail.com)
 - **WhatsApp**: [+255675839840](https://wa.me/255675839840)
 
-You can also view a live demo of the system by visiting: [Demo](https://demo.com)
+You can also view a live demo of the system by visiting: [Live Demo](https://collegeforce.pythonanywhere.com/)
 
 ## Admin Login Credentials
 
 To access the admin panel, use the following login credentials:
 
 - **Username**: `admin@college300.co.tz`
-- **Password**: `admin`
+- **Password**: `demo1234`
 
 
 ## 1. Introduction
-
-this system is offered by 35 USD paid privately or via online payment.  please countact  (Whatsap me 255675839840) for source codes to use on your college
-Location: Dodoma Tanzania
-Email: sashashamsia@gmail.com
-Whatsap +255675839840
-
-Live Demo demo.com
 
 The **Assignment & Quiz Management System (AQMS)** is a comprehensive web-based platform designed to streamline the management of academic assignments and quizzes within educational institutions. The system serves both instructors and students, providing a seamless experience for uploading, managing, and tracking academic materials such as assignments and quizzes. Instructors can upload tasks, manage courses, and student data, while students can easily access materials, participate in group assignments, and track deadlines. The system ensures efficiency, fairness, and real-time analytics by automating manual processes that were previously prone to errors and inefficiency.
 
