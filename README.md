@@ -1,8 +1,6 @@
 # ASSIGNMENT & QUIZ MANAGEMENT SYSTEM (AQMS) DOCUMENTATION
 # INFORMATION SYSTEMS DEVELOPMENT & MANAGEMENT
 ![1](https://github.com/user-attachments/assets/ff3f6bb8-257e-43cf-a127-08663ff4cb5b)
-![2](https://github.com/user-attachments/assets/e027788f-9b1a-4092-b0ae-4492f3b7fe11)
-![21](https://github.com/user-attachments/assets/e3416ec4-b89d-46b9-85f1-86e2f5a61366)
 
 ## Pricing and Contact Information
 
